@@ -64,8 +64,8 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/getScore/{code}")
-async def get_score(code: str):
+@app.get("/getScore")
+async def get_score(code: str = ""):
     url = f"https://diemthi.vnanet.vn/Home/SearchBySobaodanh?code={code}&nam=2024"
     async with httpx.AsyncClient() as client:
         try:
